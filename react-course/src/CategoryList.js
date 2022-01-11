@@ -30,6 +30,7 @@ class CategoryList extends Component {
   }
 
   //React life Cycle
+  //load olduğunda
   componentDidMount() {
     this.getCategories()
   }
