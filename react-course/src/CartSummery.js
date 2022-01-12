@@ -1,13 +1,14 @@
 import React, { Component } from "react"
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge, NavItem, NavLink } from "reactstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTimes } from "@fortawesome/free-solid-svg-icons"
+import { faTimes, faShoppingCart } from "@fortawesome/free-solid-svg-icons"
 
 class CartSummery extends Component {
   renderSummary() {
     return (
       <UncontrolledDropdown inNavbar nav>
         <DropdownToggle caret nav>
+          <FontAwesomeIcon icon={(faTimes, faShoppingCart)} style={{ paddingRight: 3 }} />
           Cart List - {this.props.cart.length}
         </DropdownToggle>
         <DropdownMenu end>
@@ -32,7 +33,10 @@ class CartSummery extends Component {
   emptyCart() {
     return (
       <NavItem>
-        <NavLink>Empty Cartlist</NavLink>
+        <NavLink>
+          <FontAwesomeIcon icon={(faTimes, faShoppingCart)} style={{ paddingRight: 3 }} />
+          Empty Cartlist
+        </NavLink>
       </NavItem>
     )
   }
