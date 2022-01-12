@@ -12,12 +12,15 @@ class CategoryList extends Component {
         <h3>{this.props.info.title}</h3>
         <ListGroup>
           {this.state.categories.map((category) => (
-            <ListGroupItem key={category.id} onClick={() => this.props.changeCatogory(category)}>
+            <ListGroupItem
+              key={category.id}
+              onClick={() => this.props.changeCatogory(category)}
+              active={category.categoryName === this.props.currentCategory ? true : false}>
               {category.categoryName}
             </ListGroupItem>
           ))}
         </ListGroup>
-        <h4>{this.props.currentCategory}</h4>
+        {/* <h4>{this.props.currentCategory}</h4> */}
       </div>
     )
   }
