@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge, NavItem, NavLink } from "reactstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes, faShoppingCart } from "@fortawesome/free-solid-svg-icons"
-
+import { Link } from "react-router-dom"
 class CartSummery extends Component {
   renderSummary() {
     return (
@@ -25,6 +25,9 @@ class CartSummery extends Component {
             </DropdownItem>
           ))}
           <DropdownItem divider />
+          <DropdownItem>
+            <Link to="cart">Go to cart</Link> {/* href muabbeti yönlendir */}
+          </DropdownItem>
           {/* <DropdownItem onClick={this.props.removeFromCart(cartItem.product)}>Reset</DropdownItem> */}
         </DropdownMenu>
       </UncontrolledDropdown>

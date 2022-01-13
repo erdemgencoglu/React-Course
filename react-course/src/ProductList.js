@@ -10,7 +10,7 @@ class ProductList extends Component {
           {this.props.info.title}-{this.props.currentCategory}
         </h3>
 
-        <Table>
+        <Table className="table table-striped">
           <thead>
             <tr>
               <th>#</th>

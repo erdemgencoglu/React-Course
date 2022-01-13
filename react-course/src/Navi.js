@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Row } from "reactstrap"
 import CartSummery from "./CartSummery"
+import { Link } from "react-router-dom"
 
 class Navi extends Component {
   render() {
@@ -13,9 +14,9 @@ class Navi extends Component {
             <NavbarToggler onClick={function noRefCheck() {}} />
             <Collapse navbar>
               <Nav className="me-auto" navbar>
-                <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
-                </NavItem>
+                <NavLink>
+                  <Link to="/form1">Form1</Link>
+                </NavLink>
                 <NavItem>
                   <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
                 </NavItem>
