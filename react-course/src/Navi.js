@@ -14,9 +14,9 @@ class Navi extends Component {
             <NavbarToggler onClick={function noRefCheck() {}} />
             <Collapse navbar>
               <Nav className="me-auto" navbar>
-                <NavLink>
+                <NavItem style={{ alignSelf: "center" }}>
                   <Link to="/form1">Form1</Link>
-                </NavLink>
+                </NavItem>
                 <NavItem>
                   <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
                 </NavItem>
