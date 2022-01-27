@@ -14,8 +14,11 @@ import {
   NavbarText,
   Container,
 } from "reactstrap"
+import { Route, Routes } from "react-router-dom"
+
 import DashBoard from "./DashBoard"
 import Navi from "../Navi/Navi"
+import CartDetail from "../Card/CartDetail"
 function App() {
   return (
     <Container>
@@ -23,7 +26,11 @@ function App() {
         <Navi></Navi>
       </Row>
       <Row>
-        <DashBoard></DashBoard>
+        <Routes>
+          <Route path="/" exact element={<DashBoard />}></Route>
+          <Route path="/product" exactelement={<DashBoard />}></Route>
+          <Route path="/cart" exact element={<CartDetail />}></Route>
+        </Routes>
       </Row>
     </Container>
   )
