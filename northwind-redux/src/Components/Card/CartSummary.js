@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { Badge, Button } from "reactstrap"
 import { bindActionCreators } from "redux"
 import * as cartActions from "../../Redux/Actions/CartActions"
+import { Link } from "react-router-dom"
 import {
   Navbar,
   NavItem,
@@ -16,7 +17,12 @@ import {
   DropdownItem,
   UncontrolledDropdown,
 } from "reactstrap"
+import alertify from "alertify.js"
 class CartSummary extends Component {
+  removeFromCart(product) {
+    this.props.actions.removeFromCart(product)
+    alertify.error(product.productName + " sepetten silindi..")
+  }
   renderEmty() {
     return (
       <NavItem>
@@ -34,13 +40,15 @@ class CartSummary extends Component {
           {this.props.cart.map((cartItem) => (
             <DropdownItem key={cartItem.product.id}>
               {cartItem.product.productName} <Badge color="success">{cartItem.quantity}</Badge>
-              <Badge color="danger" onClick={() => this.props.actions.removeFromCart(cartItem.product)}>
+              <Badge color="danger" onClick={() => this.removeFromCart(cartItem.product)}>
                 X
               </Badge>
             </DropdownItem>
           ))}
           <DropdownItem divider />
-          <DropdownItem>Sepete Git</DropdownItem>
+          <DropdownItem>
+            <Link to={"/cart"}>Sepete Git</Link>
+          </DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     )

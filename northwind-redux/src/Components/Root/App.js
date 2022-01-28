@@ -21,7 +21,7 @@ import Navi from "../Navi/Navi"
 import CartDetail from "../Card/CartDetail"
 function App() {
   return (
-    <Container>
+    <div>
       <Row>
         <Navi></Navi>
       </Row>
@@ -32,7 +32,7 @@ function App() {
           <Route path="/cart" exact element={<CartDetail />}></Route>
         </Routes>
       </Row>
-    </Container>
+    </div>
   )
 }
 
