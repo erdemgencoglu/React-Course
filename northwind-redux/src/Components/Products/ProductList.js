@@ -4,6 +4,7 @@ import { Badge, Button } from "reactstrap"
 import { bindActionCreators } from "redux"
 import { Table } from "react-bootstrap"
 import alertify from "alertify.js"
+import { Link } from 'react-router-dom'
 
 import * as productActions from "../../Redux/Actions/ProductActions"
 import * as cartActions from "../../Redux/Actions/CartActions"
@@ -43,7 +44,11 @@ class ProductList extends Component {
             {this.props.products.map((product) => (
               <tr key={product.id}>
                 <td scope="row">{product.id}</td>
-                <td>{product.productName}</td>
+                <td>
+                  <Link to={"/saveproduct/" + product.id}>
+                    {product.productName}
+                  </Link>
+                </td>
                 <td>{product.quantityPerUnit}</td>
                 <td>{product.unitPrice}</td>
                 <td>{product.unitsInStock}</td>
